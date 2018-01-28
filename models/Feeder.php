@@ -1,18 +1,25 @@
 <?php
 
-
 namespace app\models;
 
 use yii\db\ActiveRecord;
+
+use Yii;
+
 
 
 class Feeder extends ActiveRecord{
 
  public function AllArticls() {
-     $sql = 'Select ID,Articl_name,Date,Categories,Img_little,substring(Text, 1, 400) from aticls WHERE Categories = "feeder" ORDER BY ID DESC LIMIT 5';
-$model = Feeder::findbysql($sql)->asArray()->all();
-      
- foreach ($model as $m){
+      $model = Feeder::find()->select(['ID','Articl_name','Date','Categories','Img_little,substring(Text, 1, 400)'])
+    ->from('aticls')
+    ->where(['Categories' => 'Feeder'])
+    ->limit(5)
+    ->orderBy (['(ID)'=> SORT_DESC ] ) 
+    ->asArray()
+    ->all();
+// вывод данных
+       foreach ($model as $m){
                echo "<h2>".$m["Articl_name"]."</h1>";
                echo "<br>";
                echo "<h3>".$m["Date"]."(".$m["Categories"].")</h3>";
@@ -22,18 +29,22 @@ $model = Feeder::findbysql($sql)->asArray()->all();
            echo "<br>";
            echo "<p><a href= $m[Categories]?r=$m[ID]>Читать далее...</a></p>";
            echo "<br>";
-           }
+       }
                    
     }
-    public function OneArticl() {
-        if(isset($_GET['r'])){
-        $a = $_GET['r'];
+
                    
-        $sql = 'Select ID,Articl_name,Date,Categories,Img_big,Text from aticls WHERE ID = '.$a.'';
-        $model = Feeder::findbysql($sql)->asArray()->all();
-     // вывод данных  
-     
-	   foreach ($model as $m){
+    
+    public function OneArticl() {
+    
+        $request = Yii::$app->request;
+        $a = $request->get('r');    
+       $model = Feeder::find()->select(['ID','Articl_name','Date','Categories','Img_big','Text'])
+    ->from('aticls')
+    ->where(['ID' => $a])
+    ->asArray()
+    ->all();
+          foreach ($model as $m){
            echo "<h2>".$m["Articl_name"]."</h1>";
             echo "<br>";
            echo "<h3>".$m["Date"]."(".$m["Categories"].")</h3>";
@@ -41,10 +52,9 @@ $model = Feeder::findbysql($sql)->asArray()->all();
            echo $m["Img_big"];
            echo $m["Text"];
            echo "<br>";
-           }
+            }
         }
     }
-}
 
 
 
