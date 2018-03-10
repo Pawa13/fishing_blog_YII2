@@ -189,3 +189,16 @@ background: linear-gradient(to top, #CD853F, #f1da36);
 	 	color: #006400;
 	 	}
 }
+.spoiler-title{cursor:pointer;}
+ .spoiler-title:hover {
+     border-radius: 3px;
+  background: #f3ece1;
+  color: #313131;
+  text-shadow: 0 1px 0 #fff;
+  border-color: #c6c6c6;
+   } 
+.spoiler-body{display:none;}
+  .colortext {
+    background-color: #ffe; /* Цвет фона */
+    color: #930; /* Цвет текста */
+   }

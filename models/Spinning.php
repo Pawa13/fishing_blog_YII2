@@ -22,7 +22,7 @@ class Spinning extends ActiveRecord{
        foreach ($model as $m){
                echo "<h2>".$m["Articl_name"]."</h1>";
                echo "<br>";
-               echo "<h3>".$m["Date"]."(".$m["Categories"].")</h3>";
+               echo "<h3>".$m["Date"]."(".$m["Categories"].")ID:".$m["ID"]."</h3>";
                echo "<br>";
                echo $m["Img_little"];
            echo $m["substring(Text, 1, 400)"];

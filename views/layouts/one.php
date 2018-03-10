@@ -34,8 +34,7 @@ AppAsset::register($this);
  				<li><a href="/">Главная</a></li>
  				<li><a href="/feeder">Фидер</a></li>
  				<li><a href="/spinning">Спиннинг</a></li>
-  				<li><a href="/poplavok">Поплавок</a></li>
-  				<li><a href="/winter">Зимняя рыбалка</a></li>
+  				<li><a href="/admin">Администратору</a></li>
                 </ul>
         
             </div>
@@ -45,16 +44,7 @@ AppAsset::register($this);
                 </div>
                 
             <footer>
-                  sdfsdfsdgsgsgsdfgsgsfg
-                    sgsgsgsgsg
-                    sgsgsg
-                    sgsdfgsd
-                    gsgsdfgsgsfg
-                    sfgsfgsgsfgsfg
-                    sfgs
-                    g
-                    sgsg
-                    sfgsgfs 
+                  Разнообразный и богатый опыт консультация с широким активом позволяет выполнять важные задания по разработке дальнейших направлений развития.
             </footer>
 	</div>
 </body>

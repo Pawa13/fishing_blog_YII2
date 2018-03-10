@@ -5,37 +5,10 @@ use Yii;
 use yii\web\Controller;
 
 
+
 class SiteController extends Controller
 {
-    /**
-     * @inheritdoc
-     */
- /* public function behaviors()
-    {
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['logout'],
-                'rules' => [
-                    [
-                        'actions' => ['logout'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
-                ],
-            ],
-        ];
-    }
 
-    /**
-     * @inheritdoc
-     */
   public function actions()
     {
         return [
@@ -59,6 +32,7 @@ class SiteController extends Controller
     {
        
         return $this->render('index');
+      
     }
 
     /**
@@ -92,7 +66,7 @@ class SiteController extends Controller
 
         return $this->goHome();
     }
-
+   
     /**
      * Displays contact page.
      *

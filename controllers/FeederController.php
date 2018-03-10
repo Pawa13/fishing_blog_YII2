@@ -12,7 +12,7 @@ class FeederController extends Controller
     {
       
     if(isset($_GET['r'])){
-      $this->layout = 'feeder';
+      $this->layout = 'one';
     return $this->render('oneArticl');
      }
  else {
